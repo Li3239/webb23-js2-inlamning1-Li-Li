@@ -9,11 +9,16 @@ const GAME_ROCK = 'rock';
 const GAME_PAPER = 'paper';
 const GAME_SCISSORS = 'scissors';
 
-const playImgList = ["./image/rock.png", "./image/paper.png", "./image/scissors.png"];
-// const gameItems = ["rock", "paper", "scissors"];
+// play images
+const rockUrl = new URL('./image/rock.png', import.meta.url);
+const paperUrl = new URL('./image/paper.png', import.meta.url);
+const scissorsUrl = new URL('./image/scissors.png', import.meta.url);
+const playImgList = [rockUrl.href, paperUrl.href, scissorsUrl.href];
 const gameItems = [`${GAME_ROCK}`, `${GAME_PAPER}`, `${GAME_SCISSORS}`];
-const winImg = "./image/trophy.png";
-const lostImg = "./image/lost.png";
+
+// win & lost image
+const winUrl = new URL('./image/trophy.png', import.meta.url);
+const lostUrl = new URL('./image/lost.png', import.meta.url);
 
 //*************************
 // variable difinition
@@ -186,7 +191,7 @@ function setResult(result) {
         if(scorePlayer != 0){
             // 玩家获得点数，显示点数
             winnerName.innerText = `Congratuation ${inputPlayer.value}, you get ${scorePlayer} point!`
-            winnerImg.src = winImg;
+            winnerImg.src = winUrl.href;
             winnerName.style.color = "orange";
             // 更新JSON
             getData().then(updateJSON);
@@ -194,7 +199,7 @@ function setResult(result) {
         } else {
             // 玩家未获得点数，挑战失败
             winnerName.innerText = `Game over!`
-            winnerImg.src = lostImg;
+            winnerImg.src = lostUrl.href;
             winnerName.style.color = "black";
         }
 
@@ -272,5 +277,6 @@ function remainInputValue(){
     // palyer name
     inputPlayer.value = localStorage.getItem(LOCALSTORAGE_PLAYER_NAME);
     // player score
-    scoreTitle.innerText = localStorage.getItem(LOCALSTORAGE_PLAYER_SCORE);
+    let score = localStorage.getItem(LOCALSTORAGE_PLAYER_SCORE);
+    scoreTitle.innerText = (score==''||score==null)?0:score;
 }
