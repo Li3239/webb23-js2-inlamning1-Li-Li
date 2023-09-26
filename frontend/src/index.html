@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- 引入Fontawsome图标库 用于显示icon等 start -->
+    <script src="https://kit.fontawesome.com/2ef144db3f.js" crossorigin="anonymous"></script>
+    <!-- 引入Fontawsome图标库 用于显示icon等 end-->
+    <script type="module" src="main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Rock Paper Scissors</h1>
+    </div>
+
+    <div class="box">
+        <div class="box_head">
+            <!-- <div class="element">
+                <h2 id="display-player">Player1</h3>
+            </div> -->
+            <!-- <div class="element">
+                <h2>Computer</h3>
+            </div> -->
+            <div class="element">
+                <label for="player">Player Name:</label>
+                <input type="text" class="input-name" placeholder="Your Name">
+            </div>
+            <!-- <div class="element">
+                <label for="userName2">Name:</label>
+                <input type="text" disabled="false" id="userName2" class="input-name" value="Computer">
+            </div> -->
+            <div class="element">
+                <label>Your Highest Score: </label>
+                <h1 class="title-score">0</h1>
+            </div>
+            <div class="element">
+                <!-- <h1 class="score" id="score2">1</h1> -->
+            </div>
+        </div>
+        <button class="clear-button">Clear</button>
+        
+        <!-- Game  zone -->
+        <div class="container-play">
+            <!-- player1 -->
+            <div class="player-div">
+                <div class="player-img-div">
+                    <img class="player1-img">
+                </div>
+                <div>
+                    <button id="btn-rock" class="player-button1"></button>
+                    <button id="btn-paper" class="player-button1"></button>
+                    <button id="btn-scissors" class="player-button1"></button>
+                </div>
+            </div>
+            <!-- player2 -->
+            <div class="player-div">
+                <div class="player-img-div">
+                    <img class="player2-img">
+                </div>
+                <div>
+                    <button id="btn-rock" class="player-button2" disabled="false"></button>
+                    <button id="btn-paper" class="player-button2" disabled="false"></button>
+                    <button id="btn-scissors" class="player-button2" disabled="false"></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- absulut position: middle of screen -->
+        <div class="result-container">
+            <div class="winner-show">
+                <img class="result-img" alt="">
+                <h3 class="result-info">Congratulation!</h3>
+            </div>
+        </div>
+
+        <!-- 最高分列表 -->
+        <table>
+
+        </table>
+    </div>
+</body>
+
+</html>

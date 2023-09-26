@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: darkgray;
+}
+
+.box {
+    width: 95vw;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+}
+
+.box_head {
+    display: grid;
+    /*两个列，均等宽，随大小伸缩*/
+    grid-template-columns: 1fr 1fr;
+    /*高度永远不会缩小到 30像素以下，但是如果内容延伸到 300像素高了,行高也延伸到这个高度。*/
+    grid-auto-rows: minmax(30px, auto);
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.element {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    padding-top: 20px;
+    gap: 20px;
+    /* element中的元素垂直高度居中：水平的两个元素保持中心线统一 */
+    align-items: center;
+}
+
+
+.title {
+    width: 80vw;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-family: monospace;
+    color: green;
+}
+
+/**************************
+**  Show info container
+**   ->player name, score 
+***************************/
+.container-header {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    /* font-size: 20px; */
+}
+
+.input-div {
+    /* width: 50%; */
+    /* height: 90%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* player name */
+.player1-name, .player2-name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+.input-name {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* padding: 6px; */
+    margin-left: 10px;
+    font-family: cursive;
+    font-size: 16px;
+}
+
+#input-name::placeholder {
+    color: lightgray;
+}
+
+.score-div {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+
+.score {
+    color: whitesmoke;
+}
+
+/* form label, form input {
+    margin: 5px;
+} */
+
+label {
+    font-size: 25px;
+}
+/* restart button */
+.clear-button {
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+    background-color: green;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+/* Number */
+.number-column {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* set text in the middle of the round container */
+    text-align: center;
+    /* center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: green;
+    margin-right: 10px;
+}
+
+/**************************
+**  play container
+***************************/
+/* container is flex => one line */
+.container-play {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+.player-div {
+    width: 60%;
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.player-img-div {
+    width: 80%;
+    height: 300px;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+}
+
+.player1-img, .player2-img {
+    display: flex;
+    width: auto;
+    height: auto;
+    align-items: center;
+}
+
+/* user select zone: rock/paper/scissors */
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.middle-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button, .box, .player-img-div {
+    box-shadow: 2px 2px 10px 1px rgb(124, 120, 120);
+}
+
+#btn-rock {
+    background-image: url("../image/rock.png");
+}
+
+#btn-paper {
+    background-image: url("../image/paper.png");
+}
+
+#btn-scissors {
+    background-image: url("../image/scissors.png");
+}
+
+button.player-button1, button.player-button2 {
+    width: 50px;
+    height: 50px;
+    /* to keep image perfect suitable on the BUTTON */
+    background-size: 100% 100%;
+    margin: 10px;
+}
+
+/* 按键颜色反转（显示被按下状态） */
+button.player-button1.active {
+    filter: invert(100%);
+    border-color: green;
+}
+
+.vs {
+    font-size: 50px;
+    padding: 10px;
+    background-color: green;
+    color: whitesmoke;
+}
+
+
+/* Table setting */
+table {
+    width: 80%;
+    /* text-align: center; */
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+table thead tr {
+    background-color: lightgray;
+}
+
+
+th,
+td {
+    border: 1px solid;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: green;
+    color: rgb(209, 218, 226);
+}
+
+/*****************************
+** match result zone
+******************************/
+/* to show each race in a table */
+.result-container {
+    width: 80vw;
+    display: flex;
+    /* height: auto; */
+    margin: auto;
+    margin-top: 50px;
+}
+
+/* race score */
+.result-score {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    font-size: 0.8rem;
+    /* set text in the middle of the round container */
+    text-align: center;
+    /* center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 2px 2px 5px 1px rgb(124, 120, 120);
+    background-color: green;
+    border: 1px solid darkgray;
+    /* transform: translate(-50%, -50%); */
+}
+
+.winner-show {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30vh;
+    right: 45vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: none;
+    /* repeat 2 times  */
+    animation: myAnimationScale 2s 2;
+    /* the trophy will not be shown until the game is over */
+    display: none;
+}
+
+@keyframes myAnimationScale {
+    0% {
+        transform: scale(1.0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
