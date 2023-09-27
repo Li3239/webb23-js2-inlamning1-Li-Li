@@ -1,5 +1,5 @@
 import { getData, postData, patchData } from "./module/dataAccess.js";
-import { displayScores, LOCALSTORAGE_PLAYER_NAME, LOCALSTORAGE_PLAYER_SCORE } from "./module/display.js";
+import { displayScores } from "./module/display.js";
 
 const CHECK_ERR = -1;
 const WIN_DRAW = 0;
@@ -50,7 +50,7 @@ let winnerImg = document.querySelector(".result-img");
 // 获取玩家成绩，并且在列表中显示
 //-----------------------------
 getData().then(displayScores);
-remainInputValue();
+// remainInputValue();
 
 //-----------------------------
 // 玩家名输入完成，focus移出后执行
@@ -58,7 +58,7 @@ remainInputValue();
 // const displayPlayer = document.getElementById('display-player');
 inputPlayer.addEventListener('focusout', event=>{
     event.preventDefault();
-    getData().then(displayScores);
+    // getData().then(displayScores);
 })
 
 //-----------------------------
@@ -68,9 +68,9 @@ const btnClear = document.querySelector('.clear-button');
 btnClear.addEventListener('click', event=>{
     event.preventDefault();
 
-    //localstorage clear
-    localStorage.setItem(LOCALSTORAGE_PLAYER_NAME, '');
-    localStorage.setItem(LOCALSTORAGE_PLAYER_SCORE, 0);
+    // //localstorage clear
+    // localStorage.setItem(LOCALSTORAGE_PLAYER_NAME, '');
+    // localStorage.setItem(LOCALSTORAGE_PLAYER_SCORE, 0);
     // HTML值设定
     inputPlayer.value = '';
     scoreTitle.innerText = 0;
@@ -260,13 +260,16 @@ function updateJSON(data){
         'score': scorePlayer,
     }
 
-    if(hasScore){
-        // PATCH
-        patchData(playerObj).then(displayScores);
-    } else {
-        // POST
-        postData(playerObj).then(displayScores);
-    }
+    // if(hasScore){
+    //     // PATCH
+    //     patchData(playerObj).then(displayScores);
+    // } else {
+    //     // POST
+    //     postData(playerObj).then(displayScores);
+    // }
+
+    // always POST a new data
+    postData(playerObj).then(displayScores);
 }
 
 //=================================================
