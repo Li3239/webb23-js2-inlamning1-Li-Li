@@ -58,6 +58,7 @@ getData().then(displayScores);
 // const displayPlayer = document.getElementById('display-player');
 inputPlayer.addEventListener('focusout', event=>{
     event.preventDefault();
+    scoreTitle.innerText = 0;
     // getData().then(displayScores);
 })
 
@@ -186,6 +187,9 @@ function checkResult(item1, item2) {
 // Display match results in a table
 //*******************************************************
 function setResult(result) {
+    // 玩家点数显示于画面
+    scoreTitle.innerText = scorePlayer;
+
     // 玩家已有点数的情况下计算机胜出时，向server发送请求，更新json文件,游戏结束
     if(result == WIN_COMPUTER){    
         if(scorePlayer != 0){
@@ -195,6 +199,8 @@ function setResult(result) {
             winnerName.style.color = "orange";
             // 更新JSON
             getData().then(updateJSON);
+            // 玩家点数显示于画面
+            scoreTitle.innerText = 0;
 
         } else {
             // 玩家未获得点数，挑战失败

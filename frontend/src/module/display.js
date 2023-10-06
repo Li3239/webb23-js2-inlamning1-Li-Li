@@ -17,15 +17,15 @@ function displayScores(data) {
         // 查询当前玩家的既存点数是否存在
         //===============================
         // 当前玩家姓名，既存点数html元素
-        const inputPlayer = document.querySelector(".input-name");
-        const scoreTitle = document.querySelector(".title-score");
-        scoreTitle.innerText = 0;
-        for(const index in data){
-            // 查找当前玩家是否有既存点数,如果存在将点数显示于画面右上角
-            if(data[index].name.toLowerCase() == inputPlayer.value.toLowerCase()){
-                scoreTitle.innerText = data[index].score;
-            }
-        }
+        // const inputPlayer = document.querySelector(".input-name");
+        // const scoreTitle = document.querySelector(".title-score");
+        // scoreTitle.innerText = 0;
+        // for(const index in data){
+        //     // 查找当前玩家是否有既存点数,如果存在将点数显示于画面右上角
+        //     if(data[index].name.toLowerCase() == inputPlayer.value.toLowerCase()){
+        //         scoreTitle.innerText = data[index].score;
+        //     }
+        // }
 
         //===============================
         // 显示前五名玩家的点数一览
