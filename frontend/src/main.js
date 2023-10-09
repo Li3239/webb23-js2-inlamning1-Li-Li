@@ -65,17 +65,17 @@ inputPlayer.addEventListener('focusout', event=>{
 //-----------------------------
 // CLEAR 按键按下
 //-----------------------------
-const btnClear = document.querySelector('.clear-button');
-btnClear.addEventListener('click', event=>{
-    event.preventDefault();
+// const btnClear = document.querySelector('.clear-button');
+// btnClear.addEventListener('click', event=>{
+//     event.preventDefault();
 
-    // //localstorage clear
-    // localStorage.setItem(LOCALSTORAGE_PLAYER_NAME, '');
-    // localStorage.setItem(LOCALSTORAGE_PLAYER_SCORE, 0);
-    // HTML值设定
-    inputPlayer.value = '';
-    scoreTitle.innerText = 0;
-})
+//     // //localstorage clear
+//     // localStorage.setItem(LOCALSTORAGE_PLAYER_NAME, '');
+//     // localStorage.setItem(LOCALSTORAGE_PLAYER_SCORE, 0);
+//     // HTML值设定
+//     inputPlayer.value = '';
+//     scoreTitle.innerText = 0;
+// })
 
 //-----------------------------
 // 玩家游戏模块内click事件监听
